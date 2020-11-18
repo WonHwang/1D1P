@@ -2,26 +2,29 @@
 
 import sys
 
-def DFS(graph, node, visited, N):
-
-    visited.append(node)
-
-    for i in range(1, N+1):
-        if graph[node][i] == 1 and i not in visited:
-            DFS(graph, i, visited, N)
-    
-    return 1, visited
-
 N, M = map(int, sys.stdin.readline().rstrip().split(' '))
-graph = [[0 for i in range(N+1)] for j in range(N+1)]
+
+graph = [[] for i in range(N+1)]
+
 for i in range(M):
     a, b = map(int, sys.stdin.readline().rstrip().split(' '))
-    graph[a][b] = 1
+    graph[a].append(b)
+    graph[b].append(a)
 
+visited = [0 for i in range(N+1)]
 answer = 0
-visited = []
+
 for i in range(1, N+1):
-    result, visited = DFS(graph, i, visited, N)
-    answer += result
+    if visited[i] == 0:
+        queue = []
+        queue.append(i)
+        visited[i] = 1
+        while queue:
+            node = queue.pop(0)
+            visited[node] = 1
+            for j in graph[node]:
+                if visited[j] == 0:
+                    queue.append(j)
+        answer += 1
 
 print(answer)

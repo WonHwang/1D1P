@@ -1,3 +1,5 @@
+# 1D1P Day60 BOJ 2740번 행렬 곱셈 문제 - 2021.01.03
+
 N, M = map(int, input().split(' '))
 A = []
 for _ in range(N):

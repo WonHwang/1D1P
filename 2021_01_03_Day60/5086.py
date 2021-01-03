@@ -1,3 +1,5 @@
+# 1D1P Day60 BOJ 5086번 배수와 약수 문제 - 2021.01.03
+
 while True:
     a, b = map(int, input().split(' '))
 

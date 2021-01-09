@@ -1,3 +1,5 @@
+# 1D1P Day66 BOJ 2312번 수 복원하기 문제 - 2021.01.09
+
 from sys import stdin
 import copy
 

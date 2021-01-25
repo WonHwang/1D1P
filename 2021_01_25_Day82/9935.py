@@ -1,5 +1,5 @@
 string = input()
-key = input()
+key = list(input())
 key_length = len(key)
 stack = []
 
@@ -12,10 +12,14 @@ def bomb():
                 break
 
 for i in range(len(string)):
-    if len(stack) >= key_length - 1:
-        if stack[-key_length + 1:] + string[i] == key:
-            for _ in range(key_length):
-                stack.pop()
-            bomb()
-        else:
-            stack.append(string[i])
+    stack.append(string[i])
+    if len(stack) >= key_length:
+        bomb()
+
+if stack:
+    answer = ""
+    for _ in stack:
+        answer += _
+    print(answer)
+else:
+    print("FRULA")

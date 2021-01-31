@@ -1,3 +1,5 @@
+# 1D1P Day88 BOJ 2480번 주사위 세개 문제 - 2021.01.31
+
 a, b, c = map(int, input().split())
 
 if a == b and b == c and c == a:

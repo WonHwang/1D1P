@@ -98,9 +98,7 @@ def rotation(room):
                 x, y = next_index(i, j)
 
                 if x == -1 and y == -1:
-                    room[i][j] = 0
-                    temp[i][j] = 0
-
+                    continue
                 temp[x][y] = room[i][j]
 
             elif room[i][j] == -1:

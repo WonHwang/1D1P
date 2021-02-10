@@ -1,3 +1,5 @@
+# 1D1P Day98 SWEA 4861번 회문 문제 - 2021.02.10
+
 for tc in range(1, int(input()) + 1):
     N, M = map(int, input().split())
     strings = []

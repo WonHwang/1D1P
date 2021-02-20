@@ -5,11 +5,11 @@ string = input()
 stack = []
 
 for char in string:
-    if char == ')':
-        if stack and stack[-1] == '(':
+    if char == ')' and stack:
+        if stack[-1] == '(':
             stack.pop()
-    elif char == ']':
-        if stack and stack[-1] == '[':
+    elif char == ']' and stack:
+        if stack[-1] == '[':
             stack.pop()
     else:
         stack.append(char)
